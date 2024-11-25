@@ -37,7 +37,7 @@ public class ReforgerServer extends Server {
         parameters.add("-config");
         parameters.add(getConfigFile().getAbsolutePath());
         parameters.add("-maxFPS");
-        parameters.add("60");
+        parameters.add("120");
         parameters.add("-backendlog");
         parameters.add("-logAppend");
         addCustomLaunchParameters(parameters);
