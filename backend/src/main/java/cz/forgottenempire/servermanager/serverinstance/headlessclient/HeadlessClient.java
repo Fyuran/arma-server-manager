@@ -66,6 +66,7 @@ public class HeadlessClient {
         if (Strings.isNotBlank(server.getPassword())) {
             parameters.add("-password=" + server.getPassword());
         }
+        parameters.add("-limitFPS=500 -hugePages -nologs");
 
         List<String> modParameters = Stream.of(
                         server.getClientModsAsParameters(),
