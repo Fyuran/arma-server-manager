@@ -66,6 +66,8 @@ export default function EditReforgerServerSettingsForm(props: EditReforgerServer
                             onParametersChange={setLaunchParameters}
                         />
                     </Grid>
+                    <CustomTextField id='additionalOptions' label='Additional options' multiline
+                                     formik={formik} containerMd={12}/>
                     <ServerSettingsFormControls serverRunning={props.isServerRunning} onCancel={props.onCancel}/>
                 </Grid>
             </form>

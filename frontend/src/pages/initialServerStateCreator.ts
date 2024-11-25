@@ -104,6 +104,7 @@ export function reforgerServerInitialState(): ReforgerServerDto {
         battlEye: true,
         thirdPersonViewEnabled: true,
         activeMods: [],
+        additionalOptions: '',
         customLaunchParameters: [],
         automaticRestart: {
             enabled: false,

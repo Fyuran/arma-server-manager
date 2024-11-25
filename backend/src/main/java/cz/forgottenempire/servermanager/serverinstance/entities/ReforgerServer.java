@@ -3,6 +3,7 @@ package cz.forgottenempire.servermanager.serverinstance.entities;
 import cz.forgottenempire.servermanager.common.Constants;
 import cz.forgottenempire.servermanager.common.ServerType;
 import cz.forgottenempire.servermanager.serverinstance.ServerConfig;
+import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotEmpty;
@@ -52,6 +53,9 @@ public class ReforgerServer extends Server {
         String fileName = "REFORGER_" + getId() + ".json";
         return pathsFactory.getConfigFilePath(ServerType.REFORGER, fileName).toFile();
     }
+
+    @Column(columnDefinition = "LONGTEXT")
+    private String additionalOptions;
 
     private void addCustomLaunchParameters(List<String> parameters) {
         getCustomLaunchParameters().forEach(parameter -> {
