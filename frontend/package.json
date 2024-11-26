@@ -10,6 +10,7 @@
         "@mui/x-date-pickers": "^6.18.2",
         "@react-buddy/ide-toolbox": "^2.2.1",
         "@react-buddy/palette-mui": "^1.2.2",
+        "arma3-gui": "file:",
         "axios": "^1.6.2",
         "dayjs": "^1.11.10",
         "font-awesome": "^4.7.0",
@@ -68,6 +69,6 @@
         "jest": "^29.5.0",
         "ts-jest": "^29.1.0",
         "typescript": "^5.0.2",
-        "vite": "^4.5.3"
+        "vite": "^4.5.5"
     }
 }

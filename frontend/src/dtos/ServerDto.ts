@@ -95,5 +95,6 @@ export interface ReforgerServerDto extends ServerDto {
     scenarioId: string,
     battlEye: boolean,
     thirdPersonViewEnabled: boolean,
-    activeMods: Array<ReforgerModDto>
+    activeMods: Array<ReforgerModDto>,
+    additionalOptions: string
 }

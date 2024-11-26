@@ -1,7 +1,8 @@
 package cz.forgottenempire.servermanager.serverinstance.dtos;
 
-import cz.forgottenempire.servermanager.common.ServerType;
 import java.util.List;
+
+import cz.forgottenempire.servermanager.common.ServerType;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -32,10 +33,12 @@ public class ReforgerServerDto implements ServerDto {
 
     private boolean battlEye;
     private boolean thirdPersonViewEnabled;
+    
+    private String additionalOptions;
 
     private List<ReforgerModDto> activeMods;
 
     private List<LaunchParameterDto> customLaunchParameters;
-
+    
     private AutomaticRestartDto automaticRestart;
 }

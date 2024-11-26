@@ -5,12 +5,37 @@ config/*
 logs/
 .env
 docker-compose-dev.yml
+docker-compose-debug.yml
 
 HELP.md
 .gradle
 build/
 !**/src/main/**
 !**/src/test/**
+
+### DOCKER ###
+.vagrant*
+bin
+docker/docker
+.*.swp
+a.out
+*.orig
+build_src
+.flymake*
+.idea
+.DS_Store
+docs/_build
+docs/_static
+docs/_templates
+.gopath/
+.dotcloud
+*.test
+bundles/
+.hg/
+.git/
+vendor/pkg/
+pyenv
+Vagrantfile
 
 ### STS ###
 .apt_generated
@@ -46,3 +71,4 @@ out/
 
 # Transpiled Jest tests
 /src/main/webapp/__tests__/**.test.js
+/backend/bin
