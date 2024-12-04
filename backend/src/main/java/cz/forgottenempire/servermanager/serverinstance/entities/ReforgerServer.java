@@ -54,7 +54,7 @@ public class ReforgerServer extends Server {
         return pathsFactory.getConfigFilePath(ServerType.REFORGER, fileName).toFile();
     }
 
-    @Column(columnDefinition = "LONGTEXT")
+    @Column(name = "additional_options", columnDefinition = "LONGTEXT")
     private String additionalOptions;
 
     private void addCustomLaunchParameters(List<String> parameters) {

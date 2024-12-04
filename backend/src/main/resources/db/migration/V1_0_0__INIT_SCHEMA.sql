@@ -77,7 +77,8 @@ CREATE TABLE reforger_server
     scenario_id               VARCHAR(255) NULL,
     third_person_view_enabled BIT(1)       NOT NULL,
     battl_eye                 BIT(1)       NOT NULL,
-    CONSTRAINT pk_reforgerserver PRIMARY KEY (id)
+    CONSTRAINT pk_reforgerserver PRIMARY KEY (id),
+    additional_options LONGTEXT NULL
 );
 
 CREATE TABLE reforger_server_active_mods
