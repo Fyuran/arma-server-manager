@@ -75,7 +75,7 @@ class WebSecurityConfig {
         JWTAuthenticationFilter jwtAuthenticationFilter = new JWTAuthenticationFilter(authenticationManager(authenticationConfiguration));
         jwtAuthenticationFilter.setFilterProcessesUrl("/api/login");
 
-        return http.csrf(Customizer.withDefaults())
+        return http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request -> request.requestMatchers(
                                 antMatcher("/api/login"),
                                 not(antMatcher("/api/**"))
