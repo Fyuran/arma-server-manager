@@ -1,6 +1,11 @@
 import axios from "axios";
 import {toast} from "material-react-toastify";
 
+// Add CSRF token to all requests
+axios.defaults.xsrfHeaderName = "X-XSRF-TOKEN";
+axios.defaults.xsrfCookieName = "XSRF-TOKEN";
+axios.defaults.withCredentials = true;
+
 axios.interceptors.response.use(undefined, error => {
     const expectedError =
         error.response &&
@@ -18,7 +23,11 @@ axios.interceptors.response.use(undefined, error => {
 });
 
 function setJwt(jwt: string) {
-    axios.defaults.headers.common['Authorization'] = jwt;
+    if (jwt) {
+        axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
+    } else {
+        delete axios.defaults.headers.common['Authorization'];
+    }
 }
 
 export default {
