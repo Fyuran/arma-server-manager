@@ -1,23 +1,28 @@
 name: Build and publish a Docker image to ghcr.io
 on:
-
   release:
-    types: [ published ]
-
+    types: [published]
   push:
     branches:
-      - master
-      - ai-shit
+      - '**'
 
 jobs:
   docker_publish:
-    runs-on: "ubuntu-20.04"
-
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: read
+      packages: write
+      
     steps:
       - uses: actions/checkout@v2
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g')" >> $GITHUB_ENV
 
       - name: Build and publish a Docker image for ${{ github.repository }}
         uses: macbre/push-to-ghcr@master
         with:
-          image_name: ${{ github.repository }}  
+          image_name: ${{ github.repository }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ env.BRANCH_NAME }}  
